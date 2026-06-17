@@ -283,5 +283,8 @@ alert("Saved!");
 
 }
 </script>
+<button onclick="saveData()">
+Save
+</button>
 </body>
 </html>
