@@ -232,6 +232,49 @@ setInterval(updateCountdown, 100);
 
 document.getElementById('live-date').textContent = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 render();
+<script>
+
+async function loadData() {
+
+const response =
+await fetch("data.json");
+
+const data =
+await response.json();
+
+console.log(data);
+
+/* TOTAL */
+
+const total =
+document.getElementById("total");
+
+if (total)
+total.innerText =
+data.total;
+
+
+/* THERMOMETER */
+
+const fill =
+document.getElementById("thermFill");
+
+if (fill)
+fill.style.height =
+(data.stats.progress || 0)
++ "%";
+
+}
+
+loadData();
+
+/* refresh every 2 sec */
+
+setInterval(
+loadData,
+2000
+);
+
 </script>
 </body>
 </html>
