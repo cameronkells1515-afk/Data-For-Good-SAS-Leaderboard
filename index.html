@@ -232,6 +232,18 @@ setInterval(updateCountdown, 100);
 
 document.getElementById('live-date').textContent = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 render();
+<script src="data.js"></script>
+
+<div id="board"></div>
+
+<script>
+const board=document.getElementById("board");
+
+leaderboard.forEach(item=>{
+board.innerHTML += `
+<p>${item.team}: ${item.score}</p>
+`;
+});
 </script>
 </body>
 </html>
