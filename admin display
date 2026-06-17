@@ -255,6 +255,33 @@ function switchTab(tab,el) {
 }
 document.getElementById('live-date').textContent = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 render();
+<script>
+function saveData() {
+
+const team =
+document.getElementById("team").value;
+
+const score =
+document.getElementById("score").value;
+
+let leaderboard =
+JSON.parse(
+localStorage.getItem("leaderboard")
+) || [];
+
+leaderboard.push({
+team: team,
+score: score
+});
+
+localStorage.setItem(
+"leaderboard",
+JSON.stringify(leaderboard)
+);
+
+alert("Saved!");
+
+}
 </script>
 </body>
 </html>
