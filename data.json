@@ -1,0 +1,13 @@
+{
+  "goal": 1000,
+  "total": 0,
+
+  "donors": [],
+
+  "stats": {
+    "totalDonations": 0,
+    "uniqueDonors": 0,
+    "topDonor": "",
+    "progress": 0
+  }
+}
