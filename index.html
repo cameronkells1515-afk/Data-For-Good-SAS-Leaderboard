@@ -235,7 +235,24 @@ render();
 <script src="data.js"></script>
 
 <div id="board"></div>
+<div id="board"></div>
 
+<script>
+
+const board =
+document.getElementById("board");
+
+const leaderboard =
+JSON.parse(
+localStorage.getItem("leaderboard")
+) || [];
+
+leaderboard.forEach(item=>{
+board.innerHTML +=
+`<p>${item.team}: ${item.score}</p>`;
+});
+
+</script>
 <script>
 const board=document.getElementById("board");
 
